@@ -1,0 +1,18 @@
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+# YOLOv8-cls image classification model. For Usage examples see https://docs.ultralytics.com/tasks/classify
+
+# Parameters
+nc: 1000 # number of classes
+# scales: # model compound scaling constants, i.e. 'model=yolov8n-cls.yaml' will call yolov8-cls.yaml with scale 'n'
+#   # [depth, width, max_channels]
+#   b: [1.0, 1.0, 1024] # TODO: what is this?
+
+ch: 256 # hidden channels
+# YOLOv8.0n backbone
+backbone:
+  # [from, repeats, module, args]
+  - [-1, 1, MedSAMImageEncoderViT, [1024, 16, 3, 768, 12, 12, 4.0, 256, True, True, True, True, 14, [2, 5, 8, 11]]] # ?
+
+# YOLOv8.0n head
+head:
+  - [-1, 1, Classify, [nc]] # Classify

@@ -671,7 +671,7 @@ def entrypoint(debug=""):
         from ultralytics import FastSAM
 
         model = FastSAM(model)
-    elif "sam" in stem:
+    elif "sam" in stem and "medsam" not in stem:
         from ultralytics import SAM
 
         model = SAM(model)
